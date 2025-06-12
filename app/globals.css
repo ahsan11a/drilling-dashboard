@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+:root {
+  /* Dark Theme (Default) */
+  --dark-bg: #1a1a1a;
+  --panel-bg: #2d2d2d;
+  --panel-bg-focus: #333333;
+  --red: #ff3333;
+  --blue: #3399ff;
+  --green: #33cc33;
+  --yellow: #ffcc00;
+  --orange: #ff9900;
+  --purple: #9966ff;
+  --teal: #00cccc;
+  --text-light: #ffffff;
+  --text-dim: #cccccc;
+  --border-color: #444444;
+  --border-focus: #666666;
+  --taskbar-bg: #333333;
+  --search-bg: #555555;
+  --start-menu-bg: #0078d7;
+  --button-bg: #3a3a3a;
+  --button-hover: #4a4a4a;
+  --button-active: #555555;
+  --line-color-1: rgba(51, 153, 255, 0.8);
+  --line-color-2: rgba(51, 204, 51, 0.8);
+  --line-color-3: rgba(255, 204, 0, 0.8);
+  --alert-bg: rgba(255, 51, 51, 0.2);
+  --warning-bg: rgba(255, 204, 0, 0.2);
+  --info-bg: rgba(51, 153, 255, 0.2);
+  --tooltip-bg: rgba(0, 0, 0, 0.8);
+  --tooltip-border: rgba(255, 255, 255, 0.2);
+  --grid-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --gradient-start: rgba(45, 45, 45, 0.9);
+  --gradient-end: rgba(30, 30, 30, 0.9);
+  --highlight-color: rgba(255, 255, 255, 0.05);
+  --footer-bg: #2a2a2a;
+  --navbar-bg: #333333;
+  --popup-bg: #3d3d3d;
+  --ruler-color: #ffcc00;
+  --ruler-bg: rgba(255, 204, 0, 0.2);
+  --cursor-ruler-color: rgba(255, 204, 0, 0.5);
+}
+
+/* Light Theme Variables */
+.light {
+  --dark-bg: #f0f0f0;
+  --panel-bg: #ffffff;
+  --panel-bg-focus: #f5f5f5;
+  --red: #cc0000;
+  --blue: #0066cc;
+  --green: #009900;
+  --yellow: #cc9900;
+  --orange: #cc6600;
+  --purple: #6633cc;
+  --teal: #008888;
+  --text-light: #000000;
+  --text-dim: #555555;
+  --border-color: #cccccc;
+  --border-focus: #999999;
+  --taskbar-bg: #e0e0e0;
+  --search-bg: #d0d0d0;
+  --start-menu-bg: #0078d7;
+  --button-bg: #e5e5e5;
+  --button-hover: #d5d5d5;
+  --button-active: #c5c5c5;
+  --line-color-1: rgba(0, 102, 204, 0.8);
+  --line-color-2: rgba(0, 153, 0, 0.8);
+  --line-color-3: rgba(204, 153, 0, 0.8);
+  --alert-bg: rgba(204, 0, 0, 0.1);
+  --warning-bg: rgba(204, 153, 0, 0.1);
+  --info-bg: rgba(0, 102, 204, 0.1);
+  --tooltip-bg: rgba(255, 255, 255, 0.9);
+  --tooltip-border: rgba(0, 0, 0, 0.2);
+  --grid-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --gradient-start: rgba(255, 255, 255, 0.9);
+  --gradient-end: rgba(240, 240, 240, 0.9);
+  --highlight-color: rgba(0, 0, 0, 0.05);
+  --footer-bg: #e0e0e0;
+  --navbar-bg: #f0f0f0;
+  --popup-bg: #ffffff;
+  --ruler-color: #cc9900;
+  --ruler-bg: rgba(204, 153, 0, 0.2);
+  --cursor-ruler-color: rgba(204, 153, 0, 0.5);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  box-shadow: 0 4px 20px var(--shadow-color);
+  position: relative;
+}
+
+/* Custom color classes */
+.red {
+  color: var(--red);
+}
+.blue {
+  color: var(--blue);
+}
+.green {
+  color: var(--green);
+}
+.yellow {
+  color: var(--yellow);
+}
+.orange {
+  color: var(--orange);
+}
+.purple {
+  color: var(--purple);
+}
+.teal {
+  color: var(--teal);
+}
+
+/* Background color classes */
+.bg-dark-bg {
+  background-color: var(--dark-bg);
+}
+.bg-panel-bg {
+  background-color: var(--panel-bg);
+}
+.bg-panel-bg-focus {
+  background-color: var(--panel-bg-focus);
+}
+.bg-button-bg {
+  background-color: var(--button-bg);
+}
+.bg-button-hover {
+  background-color: var(--button-hover);
+}
+.bg-button-active {
+  background-color: var(--button-active);
+}
+.bg-footer-bg {
+  background-color: var(--footer-bg);
+}
+.bg-navbar-bg {
+  background-color: var(--navbar-bg);
+}
+.bg-popup-bg {
+  background-color: var(--popup-bg);
+}
+.bg-alert-bg {
+  background-color: var(--alert-bg);
+}
+.bg-warning-bg {
+  background-color: var(--warning-bg);
+}
+.bg-info-bg {
+  background-color: var(--info-bg);
+}
+.bg-highlight-color {
+  background-color: var(--highlight-color);
+}
+.bg-tooltip-bg {
+  background-color: var(--tooltip-bg);
+}
+.bg-ruler-bg {
+  background-color: var(--ruler-bg);
+}
+
+/* Text color classes */
+.text-text-light {
+  color: var(--text-light);
+}
+.text-text-dim {
+  color: var(--text-dim);
+}
+.text-ruler-color {
+  color: var(--ruler-color);
+}
+
+/* Border color classes */
+.border-border-color {
+  border-color: var(--border-color);
+}
+.border-border-focus {
+  border-color: var(--border-focus);
+}
+.border-tooltip-border {
+  border-color: var(--tooltip-border);
+}
+.border-ruler-color {
+  border-color: var(--ruler-color);
+}
+
+/* Animations */
+@keyframes pulse-alert {
+  0%,
+  100% {
+    background-color: var(--alert-bg);
+  }
+  50% {
+    background-color: rgba(255, 51, 51, 0.3);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes blink-screen {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.animate-pulse-alert {
+  animation: pulse-alert 2s infinite;
+}
+
+.animate-blink {
+  animation: blink-screen 1s infinite;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1400px) {
+  .main-content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, auto);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, auto);
+    gap: 10px;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  .dashboard {
+    padding: 5px;
+  }
+}
+
+/* Touch-specific improvements */
+@media (pointer: coarse) {
+  .control-btn,
+  .panel-control,
+  .notification-clear {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
